@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GK / GS Online Mock Test – RRB • SSC • Bihar Police</title>
+<meta name="description" content="Free GK / GS online mock tests in English and Hindi for RRB NTPC, RRB JE, SSC CGL, SSC CHSL, SSC JE and Bihar Police. Instant answers, certificate and weakness report.">
+<meta name="theme-color" content="#0b1f4d"><meta name="robots" content="index,follow">
+<meta property="og:title" content="GK / GS Online Mock Test – RRB • SSC • Bihar Police"><meta property="og:description" content="Bilingual mock tests with instant right/wrong, certificate and weakness report."><meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<body data-th="light">
+<div id="fl"></div><canvas id="cf"></canvas>
+<header><div class="logo">GK</div><div><h1>GK / GS Online Mock Test</h1><small>RRB NTPC • RRB JE • SSC CGL • CHSL • JE</small></div><div class="sp"></div>
+<button class="btn hide" id="hs" style="padding:8px 16px;background:linear-gradient(135deg,#12a150,#0e8a43)">Submit ✔</button><span class="cand hide" id="cand"></span><span id="timer" class="hide">60:00</span>
+<select id="lang" class="ib" style="width:auto;border-radius:18px;padding:0 8px;color:#fff;background:rgba(255,255,255,.14)"><option value="both" style="color:#000">EN + हिं</option><option value="en" style="color:#000">English</option><option value="hi" style="color:#000">हिंदी</option></select>
+<button class="ib" id="mu" title="Music">🎵</button><button class="ib" id="sf" title="Sound">🔊</button><button class="ib" id="dk" title="Dark mode">🌙</button><button class="ib hide" id="hm" title="Home">🏠</button></header>
+<main class="wrap">
+<section id="s-home"><div class="hero"><svg class="bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><h2>Real Exam Practice • वास्तविक परीक्षा अभ्यास</h2><p>8 GK Sets + 2 Bihar Police Mocks × 100 Questions • English + हिंदी</p><p>Option chunte hi turant right/wrong • विकल्प चुनते ही सही या गलत तुरंत दिखेगा</p><div class="tags"><span>⏱ 60 Min</span><span>⚡ Instant Result</span><span>🏆 Certificate</span><span>📊 Weakness Report</span></div></div>
+<div class="pn namebox" id="nb"><label for="nm">Candidate Name / परीक्षार्थी का नाम *</label><input id="nm" maxlength="40" placeholder="Apna poora naam likhein / Enter your full name" autocomplete="name"><span id="ne" style="color:var(--bd);font-size:13px;width:100%" class="hide">Naam likhe bina test start nahi hoga. / नाम लिखे बिना टेस्ट शुरू नहीं होगा।</span></div>
+<h2 style="margin:6px 0 12px">📘 GK / GS Practice Sets • सामान्य ज्ञान सेट</h2><div class="gd" id="cards"></div><h2 style="margin:26px 0 4px">🚔 Bihar Police (CSBC) Pattern Mock Tests • बिहार पुलिस मॉक टेस्ट</h2><p style="color:var(--mut);font-size:13px;margin:0 0 12px">100 Questions • 100 Marks • 2 Hours • Hindi, English, Maths, Science, Bihar GK &amp; GK. Original practice papers written on the CSBC pattern (not actual past papers). / CSBC पैटर्न पर बने मौलिक अभ्यास पेपर (वास्तविक पुराने पेपर नहीं)।</p><div class="gd" id="cards2"></div></section>
+<section id="s-ins" class="hide"><div class="pn ins"><h2 style="margin-top:0">Exam Instructions / परीक्षा निर्देश</h2><p id="who" style="font-weight:700"></p><ol><li id="i1"></li><li>Option select karte hi answer lock ho jayega aur turant sahi/galat dikhega. / विकल्प चुनते ही उत्तर लॉक होकर सही/गलत दिखेगा।</li><li>Palette se kisi bhi question par ja sakte hain. / पैलेट से किसी भी प्रश्न पर जा सकते हैं।</li><li>Submit ke baad certificate aur weakness report milegi. / सबमिट के बाद प्रमाणपत्र और कमज़ोरी रिपोर्ट मिलेगी।</li></ol><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn g" id="ib">◀ Back</button><button class="btn" id="bg">Begin Exam ▶ परीक्षा शुरू करें</button></div></div></section>
+<section id="s-ex" class="hide"><div class="ex"><div class="pn" id="qp"></div>
+<aside class="pn side" id="sd"><b>Question Palette / प्रश्न सूची</b><div class="pal" id="pl"></div><div class="lg"><span><i style="background:var(--ok)"></i>Correct</span><span><i style="background:var(--bd)"></i>Wrong</span><span><i style="border:1px solid var(--ln)"></i>Pending</span></div>
+<div class="st"><div><b id="c1">0</b>Correct</div><div><b id="c2">0</b>Wrong</div><div><b id="c3">100</b>Left</div></div><button class="btn b" id="sb" style="width:100%">Submit Test / जमा करें</button></aside></div>
+<button class="btn" id="fab">☰ Palette</button></section>
+<section id="s-rs" class="hide"><div id="ct"></div><div class="pn" style="margin-top:16px"><h3 style="margin-top:0">Performance by Topic / विषयवार प्रदर्शन</h3><div class="bars" id="br"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="pd">⬇ Certificate + Report (PDF)</button><button class="btn b" id="rv">Review Answers</button><button class="btn g" id="rt">Retry Set</button><button class="btn g" id="rh">All Sets</button></div>
+<p style="color:var(--mut);font-size:12px">PDF: button dabayein → print window mein <b>“Save as PDF”</b> chunein. / बटन दबाएँ → “Save as PDF” चुनें।</p></div></section>
+</main><div class="foot">GK / GS Online Mock Test • English + हिंदी<br>Practice material only. Not affiliated with CSBC, RRB, SSC or any government body. / केवल अभ्यास सामग्री; किसी सरकारी संस्था से संबद्ध नहीं।</div><div id="pr"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body></html>
