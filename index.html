@@ -25,7 +25,48 @@
 <section id="s-rs" class="hide"><div id="ct"></div><div class="pn" style="margin-top:16px"><h3 style="margin-top:0">Performance by Topic / विषयवार प्रदर्शन</h3><div class="bars" id="br"></div>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="pd">⬇ Certificate + Report (PDF)</button><button class="btn b" id="rv">Review Answers</button><button class="btn g" id="rt">Retry Set</button><button class="btn g" id="rh">All Sets</button></div>
 <p style="color:var(--mut);font-size:12px">PDF: button dabayein → print window mein <b>“Save as PDF”</b> chunein. / बटन दबाएँ → “Save as PDF” चुनें।</p></div></section>
-</main><div class="foot">GK / GS Online Mock Test • English + हिंदी<br>Practice material only. Not affiliated with CSBC, RRB, SSC or any government body. / केवल अभ्यास सामग्री; किसी सरकारी संस्था से संबद्ध नहीं।</div><div id="pr"></div>
+</main>
+  <!-- Feedback Feature -->
+<button id="feedbackBtn" class="feedback-float">
+  💬 Feedback
+</button>
+
+<div id="feedbackModal" class="feedback-modal">
+  <div class="feedback-box">
+    <button id="closeFeedback" class="feedback-close">×</button>
+
+    <h2>💬 Send Feedback</h2>
+    <p>Help us improve GK / GS Mock Test.</p>
+
+    <input type="text" id="fbName"
+      placeholder="Your Name" maxlength="40">
+
+    <select id="fbType">
+      <option value="Suggestion">Suggestion</option>
+      <option value="Bug Report">Bug Report</option>
+      <option value="Question">Question</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <textarea id="fbMessage"
+      placeholder="Write your feedback here..."
+      rows="5" maxlength="2000"></textarea>
+
+    <button id="fbWhatsApp" class="fb-wa">
+      Send via WhatsApp
+    </button>
+
+    <button id="fbEmail" class="fb-email">
+      Send via Email
+    </button>
+
+    <div class="fb-contact">
+      <b>Developer: Sumit Kumar</b><br>
+      Email: sumitkjmu09@gmail.com<br>
+      WhatsApp: 8969543599
+    </div>
+  </div>
+</div><div class="foot">GK / GS Online Mock Test • English + हिंदी<br>Practice material only. Not affiliated with CSBC, RRB, SSC or any government body. / केवल अभ्यास सामग्री; किसी सरकारी संस्था से संबद्ध नहीं।</div><div id="pr"></div>
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body></html>
