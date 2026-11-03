@@ -586,3 +586,267 @@ header h1{font-size:clamp(14px,2.4vw,18px);margin:0}header small{display:block;c
     font-size: 30px;
   }
 }
+
+/* =================================
+   OFFICIAL PREMIUM WEBSITE FOOTER
+================================= */
+
+.pro-footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: 55px;
+  padding: 45px 20px 20px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 90% 0%,
+      rgba(44,108,208,.22), transparent 35%),
+    linear-gradient(135deg,#08152f,#0b1f42 60%,#102b56);
+  border-top: 3px solid #2868c8;
+}
+
+.pf-container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* Brand */
+
+.pf-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pf-brand-logo {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg,#3988ff,#17469a);
+  box-shadow: 0 5px 20px #1e5bb955;
+  font-size: 23px;
+  font-weight: 900;
+  color: white;
+}
+
+.pf-brand-section h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .6px;
+  color: #fff;
+}
+
+.pf-tagline {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  color: #91baff;
+}
+
+.pf-description {
+  max-width: 650px;
+  margin: 20px 0;
+  color: #bac9e0;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Divider */
+
+.pf-divider {
+  height: 1px;
+  margin: 25px 0;
+  background: linear-gradient(
+    90deg,transparent,#38547e,transparent
+  );
+}
+
+/* Columns */
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 35px;
+}
+
+.pf-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pf-column h3 {
+  margin: 0 0 5px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  color: #8fb8ff;
+}
+
+.pf-column a,
+.pf-column span {
+  width: fit-content;
+  color: #bdcce1;
+  text-decoration: none;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.pf-column a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Developer */
+
+.pf-developer {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.pf-developer-avatar {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#357fe9,#153e82);
+  border: 2px solid #7eaeff;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.pf-developer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pf-developer-details span {
+  font-size: 9px;
+  color: #91b8fa;
+  letter-spacing: 1.3px;
+  font-weight: 800;
+}
+
+.pf-developer-details strong {
+  font-size: 15px;
+  color: #fff;
+}
+
+.pf-developer-details small {
+  color: #a8bbd6;
+  font-size: 11px;
+}
+
+.pf-developer-badge {
+  margin-left: auto;
+  padding: 9px 13px;
+  border: 1px solid #385b88;
+  border-radius: 30px;
+  color: #b6d1ff;
+  font-size: 10px;
+  background: #ffffff08;
+}
+
+/* Motto */
+
+.pf-motto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 20px 12px;
+  margin-top: 25px;
+  border: 1px solid #29466f;
+  border-radius: 13px;
+  background: linear-gradient(
+    120deg,#142b4d,#10264a
+  );
+  text-align: center;
+}
+
+.pf-motto strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.pf-motto span {
+  color: #a8c2e9;
+  font-size: 11px;
+}
+
+/* Bottom */
+
+.pf-bottom {
+  padding-top: 17px;
+  text-align: center;
+}
+
+.pf-bottom p {
+  margin: 6px 0;
+  color: #a9bbd5;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.pf-bottom .pf-disclaimer {
+  color: #8196b4;
+  font-size: 10px;
+}
+
+/* Responsive */
+
+@media(max-width:700px) {
+
+  .pro-footer {
+    padding: 35px 18px 18px;
+  }
+
+  .pf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 15px;
+  }
+
+  .pf-contact {
+    grid-column: 1 / -1;
+  }
+
+  .pf-brand-section h2 {
+    font-size: 17px;
+  }
+
+  .pf-developer-badge {
+    font-size: 9px;
+    padding: 7px 9px;
+  }
+}
+
+@media(max-width:420px) {
+
+  .pf-developer {
+    flex-wrap: wrap;
+  }
+
+  .pf-developer-badge {
+    margin-left: 61px;
+  }
+
+  .pf-brand-logo {
+    width: 47px;
+    height: 47px;
+  }
+
+  .pf-column a,
+  .pf-column span {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+}
+
