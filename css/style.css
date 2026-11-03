@@ -80,3 +80,122 @@ header h1{font-size:clamp(14px,2.4vw,18px);margin:0}header small{display:block;c
 :root,[data-th=dark]{--ink:#1b2540;--mut:#5b6785;--bg:#eef2fb;--cd:#fff;--ln:#d6ddf0;--blue:#16358a}body{background:#fff;color:#1b2540}
 .pgb{break-after:page}.cert{box-shadow:none;min-height:250mm;display:flex;flex-direction:column;justify-content:center;animation:none}.rq{break-inside:avoid;border-bottom:1px solid #d6ddf0;padding:6px 0;font-size:12px}.ph{color:#0b1f4d;border-bottom:3px solid #ff8a00;padding-bottom:4px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Feedback Feature */
+
+.feedback-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 9998;
+  background: linear-gradient(135deg,#2563eb,#123c91);
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #0003;
+  transition: .3s;
+}
+
+.feedback-float:hover {
+  transform: translateY(-4px);
+}
+
+.feedback-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.65);
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.feedback-modal.active {
+  display: flex;
+}
+
+.feedback-box {
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--card, #fff);
+  color: var(--tx, #172033);
+  padding: 25px;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 15px 50px #0004;
+}
+
+.feedback-box h2 {
+  margin: 0 0 8px;
+}
+
+.feedback-box p {
+  color: var(--mut, #777);
+  font-size: 13px;
+}
+
+.feedback-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.feedback-box input,
+.feedback-box select,
+.feedback-box textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid var(--ln, #ddd);
+  border-radius: 9px;
+  background: var(--bg, #fff);
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.feedback-box textarea {
+  resize: vertical;
+}
+
+.feedback-box button:not(.feedback-close) {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 9px;
+  margin-top: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fb-wa {
+  background: #20b866;
+  color: white;
+}
+
+.fb-email {
+  background: #2455bd;
+  color: white;
+}
+
+.fb-contact {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ln, #ddd);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--mut, #777);
+}
