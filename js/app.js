@@ -89,3 +89,66 @@ SETS[cur].forEach((q,i)=>{if(ans[i]!==q.a)h+=`<div class="rq"><b>Q${i+1}.</b> ${
 $('pr').innerHTML=h;const t=document.title;document.title='Certificate_'+name.replace(/\s+/g,'_');window.print();document.title=t};
 cards();show('home');
 if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+// Feedback System
+
+const feedbackBtn = document.getElementById("feedbackBtn");
+const feedbackModal = document.getElementById("feedbackModal");
+const closeFeedback = document.getElementById("closeFeedback");
+
+feedbackBtn.addEventListener("click", () => {
+  feedbackModal.classList.add("active");
+});
+
+closeFeedback.addEventListener("click", () => {
+  feedbackModal.classList.remove("active");
+});
+
+feedbackModal.addEventListener("click", (e) => {
+  if (e.target === feedbackModal) {
+    feedbackModal.classList.remove("active");
+  }
+});
+
+function getFeedback() {
+  const name = document.getElementById("fbName").value.trim();
+  const type = document.getElementById("fbType").value;
+  const message = document.getElementById("fbMessage").value.trim();
+
+  if (!name || !message) {
+    alert("Please enter your name and feedback!");
+    return null;
+  }
+
+  return `GK / GS Mock Test Feedback
+
+Name: ${name}
+Type: ${type}
+
+Feedback:
+${message}
+
+Website: GK / GS Online Mock Test`;
+}
+
+// WhatsApp Feedback
+document.getElementById("fbWhatsApp").addEventListener("click", () => {
+  const feedback = getFeedback();
+  if (!feedback) return;
+
+  const url = "https://wa.me/918969543599?text=" +
+    encodeURIComponent(feedback);
+
+  window.open(url, "_blank");
+});
+
+// Email Feedback
+document.getElementById("fbEmail").addEventListener("click", () => {
+  const feedback = getFeedback();
+  if (!feedback) return;
+
+  const subject = encodeURIComponent("GK / GS Mock Test Feedback");
+  const body = encodeURIComponent(feedback);
+
+  window.location.href =
+    `mailto:sumitkjmu09@gmail.com?subject=${subject}&body=${body}`;
+});
