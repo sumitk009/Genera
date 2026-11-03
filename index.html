@@ -26,47 +26,157 @@
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="pd">⬇ Certificate + Report (PDF)</button><button class="btn b" id="rv">Review Answers</button><button class="btn g" id="rt">Retry Set</button><button class="btn g" id="rh">All Sets</button></div>
 <p style="color:var(--mut);font-size:12px">PDF: button dabayein → print window mein <b>“Save as PDF”</b> chunein. / बटन दबाएँ → “Save as PDF” चुनें।</p></div></section>
 </main>
-  <!-- Feedback Feature -->
-<button id="feedbackBtn" class="feedback-float">
-  💬 Feedback
+  <!-- ================= PREMIUM FEEDBACK SYSTEM ================= -->
+
+<button class="pf-trigger" id="pfOpen">
+  <span class="pf-trigger-icon">✦</span>
+  Feedback
+  <span class="pf-trigger-dot"></span>
 </button>
 
-<div id="feedbackModal" class="feedback-modal">
-  <div class="feedback-box">
-    <button id="closeFeedback" class="feedback-close">×</button>
+<div class="pf-overlay" id="pfOverlay">
+  <div class="pf-modal" role="dialog"
+       aria-modal="true" aria-labelledby="pfTitle">
 
-    <h2>💬 Send Feedback</h2>
-    <p>Help us improve GK / GS Mock Test.</p>
+    <div class="pf-header">
+      <div class="pf-header-top">
+        <div class="pf-brand">
+          <div class="pf-brand-icon">GK</div>
+          <div>
+            <div class="pf-brand-name">GK / GS MOCK TEST</div>
+            <div class="pf-brand-sub">STUDENT FEEDBACK CENTER</div>
+          </div>
+        </div>
+        <button class="pf-close" id="pfClose"
+                aria-label="Close">×</button>
+      </div>
 
-    <input type="text" id="fbName"
-      placeholder="Your Name" maxlength="40">
-
-    <select id="fbType">
-      <option value="Suggestion">Suggestion</option>
-      <option value="Bug Report">Bug Report</option>
-      <option value="Question">Question</option>
-      <option value="Other">Other</option>
-    </select>
-
-    <textarea id="fbMessage"
-      placeholder="Write your feedback here..."
-      rows="5" maxlength="2000"></textarea>
-
-    <button id="fbWhatsApp" class="fb-wa">
-      Send via WhatsApp
-    </button>
-
-    <button id="fbEmail" class="fb-email">
-      Send via Email
-    </button>
-
-    <div class="fb-contact">
-      <b>Developer: Sumit Kumar</b><br>
-      Email: sumitkjmu09@gmail.com<br>
-      WhatsApp: 8969543599
+      <div class="pf-heading">
+        <span class="pf-eyebrow">WE VALUE YOUR VOICE</span>
+        <h2 id="pfTitle">Help Us Improve! ✨</h2>
+        <p>Your feedback makes our platform better for every student.</p>
+      </div>
+      <div class="pf-decoration"></div>
     </div>
+
+    <div class="pf-body">
+
+      <!-- Rating -->
+      <div class="pf-section">
+        <label class="pf-label">How was your experience?</label>
+        <div class="pf-rating" id="pfRating">
+          <button type="button" data-rating="1" aria-label="1 star">★</button>
+          <button type="button" data-rating="2" aria-label="2 stars">★</button>
+          <button type="button" data-rating="3" aria-label="3 stars">★</button>
+          <button type="button" data-rating="4" aria-label="4 stars">★</button>
+          <button type="button" data-rating="5" aria-label="5 stars">★</button>
+        </div>
+        <div class="pf-rating-text" id="pfRatingText">
+          Select your rating
+        </div>
+      </div>
+
+      <!-- Feedback Category -->
+      <div class="pf-section">
+        <label class="pf-label">What would you like to share?</label>
+        <div class="pf-categories" id="pfCategories">
+          <button type="button" data-category="Suggestion">💡 Suggestion</button>
+          <button type="button" data-category="Bug Report">🐛 Bug Report</button>
+          <button type="button" data-category="Question">❓ Question</button>
+          <button type="button" data-category="Appreciation">❤️ Appreciation</button>
+          <button type="button" data-category="Other">✦ Other</button>
+        </div>
+      </div>
+
+      <!-- Identity -->
+      <div class="pf-section">
+        <div class="pf-label-row">
+          <label class="pf-label">Your Details</label>
+          <span class="pf-optional">OPTIONAL</span>
+        </div>
+
+        <div class="pf-input-wrap">
+          <span>👤</span>
+          <input id="pfName" type="text"
+                 placeholder="Your name (optional)"
+                 maxlength="40">
+        </div>
+
+        <div class="pf-input-wrap">
+          <span>✉</span>
+          <input id="pfEmail" type="email"
+                 placeholder="Email address (optional)"
+                 maxlength="100">
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="pf-section">
+        <div class="pf-label-row">
+          <label class="pf-label" for="pfMessage">
+            Tell us more
+          </label>
+          <span class="pf-optional">REQUIRED</span>
+        </div>
+
+        <textarea id="pfMessage"
+                  maxlength="2000"
+                  rows="4"
+                  placeholder="Share your suggestions, problems or experience..."></textarea>
+
+        <div class="pf-counter">
+          <span>Be honest. Every suggestion matters!</span>
+          <span id="pfCount">0/2000</span>
+        </div>
+      </div>
+
+      <!-- Privacy -->
+      <div class="pf-privacy">
+        <span>🔒</span>
+        Your personal details are optional. Your feedback
+        will be shared only when you choose a contact method.
+      </div>
+
+      <!-- Submit -->
+      <div class="pf-submit-area">
+        <button type="button" class="pf-whatsapp" id="pfWhatsApp">
+          <span>◉</span>
+          Send via WhatsApp
+          <span>↗</span>
+        </button>
+
+        <button type="button" class="pf-email-btn" id="pfEmailBtn">
+          <span>✉</span>
+          Send via Email
+          <span>↗</span>
+        </button>
+      </div>
+
+      <p class="pf-note">
+        Choose either channel to prepare your feedback.
+        You can send it through both channels separately.
+      </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="pf-footer">
+      <div class="pf-developer-icon">S</div>
+      <div class="pf-developer-info">
+        <strong>Sumit Kumar</strong>
+        <span>Founder & Developer</span>
+      </div>
+      <div class="pf-footer-contact">
+        <a href="mailto:sumitkjmu09@gmail.com">Email</a>
+        <a href="https://wa.me/918969543599" target="_blank"
+           rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
   </div>
-</div><div class="foot">GK / GS Online Mock Test • English + हिंदी<br>Practice material only. Not affiliated with CSBC, RRB, SSC or any government body. / केवल अभ्यास सामग्री; किसी सरकारी संस्था से संबद्ध नहीं।</div><div id="pr"></div>
+</div>
+
+<!-- ================= END PREMIUM FEEDBACK ================= --><div class="foot">GK / GS Online Mock Test • English + हिंदी<br>Practice material only. Not affiliated with CSBC, RRB, SSC or any government body. / केवल अभ्यास सामग्री; किसी सरकारी संस्था से संबद्ध नहीं।</div><div id="pr"></div>
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body></html>
